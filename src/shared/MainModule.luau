@@ -77,18 +77,18 @@ function mainModule.init(plr:Player)
         end
     end)
 
-	self.connections["humDied"] = self.Character.Humanoid.Died:Connect(function()
-		self.part:Destroy()
+    self.connections["humDied"] = self.Character.Humanoid.Died:Connect(function()
+	self.part:Destroy()
 
-		for _,con in self.connections do
-			con:Disconnect()
-		end
+	for _,con in self.connections do
+		con:Disconnect()
+	end
 
-		self.connections = {}
-		self = nil
-	end)
+	self.connections = {}
+	self = nil
+   end)
 
-	return self
+   return self
 end
 
 return mainModule
